@@ -166,3 +166,9 @@ func _on_body_fall(body: Node3D) -> void:
 		time = 0
 		start = true
 		
+
+
+func _on_shoparea_body_entered(body: Node3D) -> void:
+	if body.is_in_group("car"):
+		pass
+		
