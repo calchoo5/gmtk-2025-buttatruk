@@ -848,9 +848,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 
 [node name="DrunkInterval" type="Timer" parent="."]
 
-[node name="dumbcar2" parent="." instance=ExtResource("1_fv0fp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
-
 [node name="store" parent="." instance=ExtResource("8_xjdu2")]
 transform = Transform3D(-0.659726, 0, -0.751506, 0, 1, 0, 0.751506, 0, -0.659726, 14.0166, 2.60922, 388.22)
 
@@ -879,4 +876,5 @@ skeleton = NodePath("../../check1")
 [connection signal="body_entered" from="check7" to="." method="_on_check_7_body_entered"]
 [connection signal="body_entered" from="check8" to="." method="_on_check_8_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_fall"]
+[connection signal="timeout" from="DrunkInterval" to="." method="_on_drunk_interval_timeout"]
 [connection signal="body_entered" from="shoparea" to="." method="_on_shoparea_body_entered"]

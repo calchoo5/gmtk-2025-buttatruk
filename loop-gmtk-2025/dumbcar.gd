@@ -18,6 +18,7 @@ var pointsMult : int = 1
 
 func flip_directions() -> void:
 	maxsteer *= -1
+	print("flipped")
 
 func get_direction() -> int:
 	return sign(maxsteer)
