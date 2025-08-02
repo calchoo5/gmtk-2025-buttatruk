@@ -1,11 +1,12 @@
 extends VehicleBody3D
 
 @export var maxsteer = 0.9
-@export var enginepower = 300
+@export var max_enginepower = 300
 @export var brakepower = 1
 @export var handbrakepower = 2
 @export var steerdamp = 2
 
+var enginepower = max_enginepower
 var pedal = 0.0
 var rpm = 0.0
 var buffer = 0
@@ -13,21 +14,29 @@ var amount = 250
 var shift1 = true
 var shift2 = true
 
+var pointsMult : int = 1
+
+
 func _process(delta: float) -> void:
 	buffer += 1
 	if buffer == 40:
 		buffer = 0
 		fart()
 
+func getPointsMult() -> int:
+	return pointsMult
+
 func get_upgrade(name : String):
 	match name:
 		"Beer":
-			pass
+			maxsteer *= -1
+			pointsMult += 0.5
 		"Fiber":
 			brakepower -= 0.1
-			print("boo!")
 		"YingYang":
-			pass
+			max_enginepower += 50
+	print(max_enginepower)
+	print(pointsMult)
 
 func _physics_process(delta: float) -> void:
 	#steering
@@ -79,6 +88,7 @@ func _physics_process(delta: float) -> void:
 			$rearleft.engine_force = 0
 			brake = handbrakepower
 		
+	
 func going_forward() -> bool:
 	var relative_speed : float = basis.z.dot(linear_velocity.normalized())
 	if relative_speed > 0.01:
@@ -97,7 +107,7 @@ func fart():
 			print("shift1")
 			enginepower = -10
 			await get_tree().create_timer(0.2).timeout
-			enginepower = 300 
+			enginepower = max_enginepower 
 			shift1 = false
 			shift2 = true
 		amount = 350
@@ -106,7 +116,7 @@ func fart():
 			print("shift2")
 			enginepower = -10
 			await get_tree().create_timer(0.2).timeout
-			enginepower = 300 
+			enginepower = max_enginepower 
 			shift2 = false
 			shift1 = true
 		amount = 450

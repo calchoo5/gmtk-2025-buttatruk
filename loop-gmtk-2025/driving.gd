@@ -25,13 +25,13 @@ var opt3: int = -1
 var cardtitle = {
 	1:"An Ice Cold Beer",
 	2:"Karbon Faiba",
-	3:"Ying Yang Spinny Thang"
+	3:"Ying Yang Spinny Thang",
 }
 
 var carddesc = {
 	1:"Extra points at the cost of nausea.\n (driving in my car, right after a beer!)",
 	2:"Less vehicle weight. May cause less grip.\n (i dont think this helps...)",
-	3:"Slap a turbo on it for better acceleration.\n (can always trust ol mate garrett)"
+	3:"Slap a turbo on it for better acceleration.\n (can always trust ol mate garrett)",
 }
 
 func _ready() -> void:
@@ -44,9 +44,9 @@ func _process(delta : float) -> void:
 
 func _card():
 	get_tree().paused = true
-	var rand1 = randi_range(1,3)
-	var rand2 = randi_range(1,3)
-	var rand3 = randi_range(1,3)
+	var rand1 = randi_range(1,cardtitle.size())
+	var rand2 = randi_range(1,cardtitle.size())
+	var rand3 = randi_range(1,cardtitle.size())
 	$rogue.visible = true
 	%vb/title1.text = cardtitle[rand1]
 	%vb/what1.text = carddesc[rand1]
@@ -71,7 +71,7 @@ func _on_check_1_body_entered(body: Node3D) -> void:
 			check7 = false
 			check8 = false
 			points = 200/time
-			totpoints += points
+			totpoints += points * $dumbcar.getPointsMult()
 			if time < besttime:
 				besttime = time
 				$besttime.text = _format_seconds(time, use_milliseconds)
@@ -82,8 +82,8 @@ func _on_check_1_body_entered(body: Node3D) -> void:
 			_card()
 		else:
 			print("fail")
-			get_tree().paused = true
-			_card()
+			#get_tree().paused = true
+			#_card()
 			time = 0
 			start = true
 		check1 = true
@@ -151,10 +151,18 @@ func _on_upgrade_click(index : int) -> void:
 	get_tree().paused = false
 	match index:
 		1: #extra points but nausea
-			pass
+			$dumbcar.get_upgrade("Beer")
 		2: #less weight
 			$dumbcar.get_upgrade("Fiber")
 		3: #turbo acceleration
-			pass
+			$dumbcar.get_upgrade("YingYang")
 		_:
 			print("invalid")
+
+func _on_body_fall(body: Node3D) -> void:
+	if body.is_in_group("car"):
+		body.position = Vector3(-42.12,0.726,-3.148)
+		body.rotation = Vector3(0,0,0)
+		time = 0
+		start = true
+		

@@ -18,5 +18,3 @@ func _physics_process(delta):
 	pos = target + offset
 	look_at_from_position(pos,target,up)
 	
-	
-	
