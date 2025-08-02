@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8140s6i5iyj0"
+path="res://.godot/imported/Bruh Sound Effect #2.mp3-06b9779b027f8bc5779058f6e67d0691.mp3str"
+
+[deps]
+
+source_file="res://shit/sfx/Bruh Sound Effect #2.mp3"
+dest_files=["res://.godot/imported/Bruh Sound Effect #2.mp3-06b9779b027f8bc5779058f6e67d0691.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,268 @@
+[gd_scene load_steps=18 format=3 uid="uid://cb812etluo0m5"]
+
+[ext_resource type="Texture2D" uid="uid://dtgte8ty3cx3p" path="res://shit/images/roundaloop.png" id="1_nrt2l"]
+[ext_resource type="Script" uid="uid://b7tgpm0kskpo2" path="res://titel.gd" id="1_uykxl"]
+[ext_resource type="Theme" uid="uid://chs4jxj5mv14x" path="res://highway.tres" id="2_0hhcp"]
+[ext_resource type="Script" uid="uid://clgo4ipubdwd7" path="res://settings.gd" id="2_0u8ot"]
+[ext_resource type="PackedScene" uid="uid://dlr3fnmqv5ho1" path="res://dumbcar.tscn" id="3_js7em"]
+[ext_resource type="AudioStream" uid="uid://f5kvx44j6g6u" path="res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3" id="4_rs8b8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0u8ot"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv0fp"]
+albedo_color = Color(0.187184, 0.317252, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0hhcp"]
+material = SubResource("StandardMaterial3D_fv0fp")
+size = Vector3(500, 1, 1000)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uykxl"]
+points = PackedVector3Array(250, 0.5, 500, 250, -0.5, 500, 250, 0.5, -500, -250, 0.5, 500, -250, -0.5, 500, 250, -0.5, -500, -250, 0.5, -500, -250, -0.5, -500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haunf"]
+albedo_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uykxl"]
+material = SubResource("StandardMaterial3D_haunf")
+size = Vector3(10, 0.25, 1000)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_js7em"]
+sky_top_color = Color(0.24028, 0.447542, 0.617145, 1)
+ground_bottom_color = Color(0.258824, 0.466667, 0.176471, 1)
+
+[sub_resource type="Sky" id="Sky_siori"]
+sky_material = SubResource("ProceduralSkyMaterial_js7em")
+
+[sub_resource type="Environment" id="Environment_uykxl"]
+background_mode = 2
+background_color = Color(0.666635, 0.877823, 0.876873, 1)
+sky = SubResource("Sky_siori")
+ambient_light_color = Color(1, 1, 0.584314, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0u8ot"]
+size = Vector3(500, 22.325, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rs8b8"]
+size = Vector3(1000, 20, 1)
+
+[node name="titel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uykxl")
+
+[node name="settin" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -516.0
+offset_top = -250.0
+offset_right = -216.0
+offset_bottom = 250.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0.431373, 0.317647, 1)
+script = ExtResource("2_0u8ot")
+
+[node name="sfx" type="AudioStreamPlayer" parent="settin"]
+stream = ExtResource("4_rs8b8")
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -240.0
+offset_right = 140.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -235.0
+offset_right = 135.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.431373, 0.317647, 1)
+
+[node name="settings" type="VBoxContainer" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -200.0
+offset_right = 128.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme = ExtResource("2_0hhcp")
+theme_override_font_sizes/font_size = 70
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="settin/settings"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_0u8ot")
+
+[node name="fsc" type="CheckButton" parent="settin/settings"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_0hhcp")
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen           "
+alignment = 1
+
+[node name="mvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="mvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="sfxvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX Volume"
+
+[node name="sfxvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="musvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "BGM Volume"
+
+[node name="musvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.751033, -0.288787, 0.59376, -0.00534354, 0.896589, 0.442832, -0.660243, -0.335754, 0.671825, 3.80148, 5.10379, 6.00454)
+fov = 60.0
+
+[node name="logo" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1268.0
+offset_bottom = 760.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_nrt2l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 450
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0hhcp")
+text = "     lemme droive mate     "
+
+[node name="settin" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0hhcp")
+text = "set my stuff bruv"
+
+[node name="leave" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_0hhcp")
+text = "get out, of my car, NOW"
+
+[node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -34.692)
+
+[node name="grounsd" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -449.111)
+mesh = SubResource("BoxMesh_0hhcp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -449.111)
+shape = SubResource("ConvexPolygonShape3D_uykxl")
+
+[node name="roadtoshop" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -449.733)
+mesh = SubResource("BoxMesh_uykxl")
+
+[node name="dumbcar" parent="." instance=ExtResource("3_js7em")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.36498, 1.2656, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.886559, -0.329111, 0.325114, 0, 0.702774, 0.711413, -0.462615, -0.63071, 0.623051, 0, 4.14681, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uykxl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.82686, 13.0904)
+shape = SubResource("BoxShape3D_0u8ot")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 250, 0, -500)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 4.82686, -0.909546)
+shape = SubResource("BoxShape3D_rs8b8")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -246, 0, -500)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 4.82686, -0.909546)
+shape = SubResource("BoxShape3D_rs8b8")
+
+[connection signal="toggled" from="settin/settings/fsc" to="settin" method="_on_fsc_toggled"]
+[connection signal="value_changed" from="settin/settings/mvol" to="settin" method="_on_mvol_value_changed"]
+[connection signal="value_changed" from="settin/settings/sfxvol" to="settin" method="_on_sfxvol_value_changed"]
+[connection signal="value_changed" from="settin/settings/musvol" to="settin" method="_on_musvol_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/settin" to="." method="_on_settin_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/leave" to="." method="_on_leave_pressed"]
