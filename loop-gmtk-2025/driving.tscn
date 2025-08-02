@@ -73,7 +73,6 @@ script = ExtResource("1_h0d5d")
 
 [node name="rogue" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="rogue"]
 anchors_preset = 15
@@ -97,9 +96,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 
-[node name="card1" type="TextureRect" parent="rogue/cards"]
+[node name="card1" type="Button" parent="rogue/cards"]
 layout_mode = 2
-texture = ExtResource("2_haunf")
+icon = ExtResource("2_haunf")
+flat = true
 
 [node name="vb" type="VBoxContainer" parent="rogue/cards/card1"]
 unique_name_in_owner = true
@@ -137,9 +137,10 @@ text = "does shit"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="card2" type="TextureRect" parent="rogue/cards"]
+[node name="card2" type="Button" parent="rogue/cards"]
 layout_mode = 2
-texture = ExtResource("2_haunf")
+icon = ExtResource("2_haunf")
+flat = true
 
 [node name="vb2" type="VBoxContainer" parent="rogue/cards/card2"]
 unique_name_in_owner = true
@@ -177,9 +178,10 @@ text = "does shit"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="card3" type="TextureRect" parent="rogue/cards"]
+[node name="card3" type="Button" parent="rogue/cards"]
 layout_mode = 2
-texture = ExtResource("2_haunf")
+icon = ExtResource("2_haunf")
+flat = true
 
 [node name="vb3" type="VBoxContainer" parent="rogue/cards/card3"]
 unique_name_in_owner = true
@@ -469,10 +471,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.11743, 1.8089, 318.528)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1662, 1.8089, 336.056)
 
 [node name="tree33" parent="trees" instance=ExtResource("5_w6orf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23967, 1.8089, 354.892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.263, -18.639, 309.892)
 
 [node name="tree34" parent="trees" instance=ExtResource("5_w6orf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1197, 1.8089, 364.31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6224, -18.639, 319.31)
 
 [node name="tree35" parent="trees" instance=ExtResource("5_w6orf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1345, 1.8089, 375.559)
@@ -531,7 +533,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0149, 1.8089, 152.512)
 [node name="tree53" parent="trees" instance=ExtResource("5_w6orf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0149, 1.8089, 152.512)
 
+[connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]
+[connection signal="pressed" from="rogue/cards/card2" to="." method="_on_card_2_pressed"]
+[connection signal="pressed" from="rogue/cards/card3" to="." method="_on_card_3_pressed"]
 [connection signal="body_entered" from="check1" to="." method="_on_check_1_body_entered"]
 [connection signal="body_entered" from="check2" to="." method="_on_check_2_body_entered"]
 [connection signal="body_entered" from="check3" to="." method="_on_check_3_body_entered"]
