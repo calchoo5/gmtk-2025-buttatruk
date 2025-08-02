@@ -18,8 +18,17 @@ func _process(delta: float) -> void:
 	if buffer == 40:
 		buffer = 0
 		fart()
-	
-#
+
+func get_upgrade(name : String):
+	match name:
+		"Beer":
+			pass
+		"Fiber":
+			brakepower -= 0.1
+			print("boo!")
+		"YingYang":
+			pass
+
 func _physics_process(delta: float) -> void:
 	#steering
 	steering = move_toward(steering, Input.get_axis("right","left") * maxsteer,delta * steerdamp)

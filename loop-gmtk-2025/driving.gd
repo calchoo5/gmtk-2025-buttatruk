@@ -18,6 +18,10 @@ var points = 0
 var totpoints = 0
 var besttime = 1000000000
 
+var opt1: int = -1
+var opt2: int = -1
+var opt3: int = -1
+
 var cardtitle = {
 	1:"An Ice Cold Beer",
 	2:"Karbon Faiba",
@@ -33,13 +37,13 @@ var carddesc = {
 func _ready() -> void:
 	Transition.playback("white_fade")
 
-
 func _process(delta : float) -> void:
 	if start:
 		time += delta
 		$stopwatch.text = _format_seconds(time, use_milliseconds)
 
 func _card():
+	get_tree().paused = true
 	var rand1 = randi_range(1,3)
 	var rand2 = randi_range(1,3)
 	var rand3 = randi_range(1,3)
@@ -51,6 +55,9 @@ func _card():
 	%vb3/title3.text = cardtitle[rand3]
 	%vb3/what3.text = carddesc[rand3]
 	
+	opt1 = rand1
+	opt2 = rand2
+	opt3 = rand3
 		
 func _on_check_1_body_entered(body: Node3D) -> void:
 	if body.is_in_group("car"):
@@ -72,6 +79,7 @@ func _on_check_1_body_entered(body: Node3D) -> void:
 			time = 0
 			
 			$check1/yay.play()
+			_card()
 		else:
 			print("fail")
 			#get_tree().paused = true
@@ -128,3 +136,25 @@ func _on_check_8_body_entered(body: Node3D) -> void:
 
 func _on_vb_mouse_entered() -> void:
 	print("entered")
+
+func _on_card_1_pressed() -> void:
+	_on_upgrade_click(opt1)
+
+func _on_card_2_pressed() -> void:
+	_on_upgrade_click(opt2)
+
+func _on_card_3_pressed() -> void:
+	_on_upgrade_click(opt3)
+
+func _on_upgrade_click(index : int) -> void:
+	$rogue.hide()
+	get_tree().paused = false
+	match index:
+		1: #extra points but nausea
+			pass
+		2: #less weight
+			$dumbcar.get_upgrade("Fiber")
+		3: #turbo acceleration
+			pass
+		_:
+			print("invalid")
