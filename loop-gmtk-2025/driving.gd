@@ -146,12 +146,17 @@ func _on_card_2_pressed() -> void:
 func _on_card_3_pressed() -> void:
 	_on_upgrade_click(opt3)
 
+var drunkInterval = 10.0
+
 func _on_upgrade_click(index : int) -> void:
 	$rogue.hide()
 	get_tree().paused = false
 	match index:
 		1: #extra points but nausea
 			$dumbcar.get_upgrade("Beer")
+			$DrunkInterval.wait_time = drunkInterval
+			drunkInterval /= 2
+			$DrunkInterval.start()
 		2: #less weight
 			$dumbcar.get_upgrade("Fiber")
 		3: #turbo acceleration
@@ -165,4 +170,10 @@ func _on_body_fall(body: Node3D) -> void:
 		body.rotation = Vector3(0,0,0)
 		time = 0
 		start = true
-		
+
+func _on_drunk_interval_timeout() -> void:
+	$dumbcar.flip_directions()
+	if($dumbcar.get_direction() < 0):
+		$stopwatch["theme_override_colors/font_color"] = Color.RED
+	else:
+		$stopwatch["theme_override_colors/font_color"] = Color.WHITE

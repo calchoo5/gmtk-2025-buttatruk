@@ -235,6 +235,7 @@ offset_right = 95.0
 offset_bottom = 77.0
 grow_horizontal = 2
 theme = ExtResource("3_dv6av")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "00:00:00"
 horizontal_alignment = 1
@@ -664,8 +665,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -103.984, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6376, 19.3342, 137.408)
 shape = SubResource("HeightMapShape3D_haunf")
-[node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
+
+[node name="dumbcar" parent="." groups=["car"] instance=ExtResource("1_fv0fp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
+
+[node name="DrunkInterval" type="Timer" parent="."]
 
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]
@@ -680,3 +684,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 [connection signal="body_entered" from="check7" to="." method="_on_check_7_body_entered"]
 [connection signal="body_entered" from="check8" to="." method="_on_check_8_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_fall"]
+[connection signal="timeout" from="DrunkInterval" to="." method="_on_drunk_interval_timeout"]
