@@ -56,7 +56,7 @@ top_radius = 0.04
 bottom_radius = 0.04
 height = 0.1
 
-[node name="dumbcar" type="VehicleBody3D"]
+[node name="dumbcar" type="VehicleBody3D" groups=["car"]]
 physics_interpolation_mode = 1
 mass = 240.0
 center_of_mass_mode = 1
