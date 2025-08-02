@@ -66,7 +66,7 @@ radius = 0.1
 height = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dv6av"]
-size = Vector3(10, 3, 1)
+size = Vector3(10.3553, 3, 1)
 
 [sub_resource type="HeightMapShape3D" id="HeightMapShape3D_haunf"]
 map_width = 1000
@@ -298,9 +298,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_siori")
 
-[node name="dumbcar" parent="." groups=["car"] instance=ExtResource("1_fv0fp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1254, 0.725949, -3.14778)
-
 [node name="roundabout" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0381217, 0)
 
@@ -320,8 +317,123 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0467644, -0.922518, 0.00491524)
 shape = SubResource("ConvexPolygonShape3D_siori")
 
-[node name="start" type="MeshInstance3D" parent="roundabout"]
+[node name="roadline" type="MeshInstance3D" parent="roundabout"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -45, 0.165864, 0)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline2" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(8.60623e-09, 0.196887, 0.980426, 1, -4.37114e-08, 8.60043e-16, 4.28558e-08, 0.980426, -0.196887, -43.3569, 0.165864, 10.6898)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline3" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(2.30515e-08, 0.527356, 0.849644, 1, -4.37114e-08, -1.76984e-15, 3.71391e-08, 0.849644, -0.527356, -38.5777, 0.165864, 22.6051)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline4" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(2.95625e-08, 0.676311, 0.736617, 1, -4.37114e-08, -9.22685e-16, 3.21985e-08, 0.736617, -0.676311, -31.8344, 0.165864, 31.6398)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline5" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(3.6185e-08, 0.827816, 0.561, 1, -4.37114e-08, -5.36875e-16, 2.45221e-08, 0.561, -0.827816, -23.0616, 0.165864, 38.3831)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline6" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(4.22123e-08, 0.965704, 0.259645, 1, -4.37114e-08, -1.07375e-15, 1.13494e-08, 0.259645, -0.965704, -11.8664, 0.165864, 43.1623)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline7" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(4.37114e-08, 1, 0.000855163, 1, -4.37114e-08, -4.32066e-16, 3.73719e-11, 0.000855163, -1, -0.0166054, 0.165864, 44.799)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline8" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(4.2337e-08, 0.968557, -0.248791, 1, -4.37114e-08, -1.54232e-15, -1.0875e-08, -0.248791, -0.968557, 13.0117, 0.165864, 42.9004)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline9" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(3.7946e-08, 0.868104, -0.496383, 1, -4.37114e-08, -1.54232e-15, -2.16976e-08, -0.496383, -0.868104, 23.3557, 0.165864, 38.2522)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline10" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(3.10373e-08, 0.71005, -0.704151, 1, -4.37114e-08, -1.54258e-15, -3.07794e-08, -0.704151, -0.71005, 31.8012, 0.165864, 31.6398)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline11" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(2.20134e-08, 0.503608, -0.863932, 1, -4.37114e-08, -5.62561e-16, -3.77637e-08, -0.863932, -0.503608, 39.063, 0.165864, 22.134)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline12" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(1.25434e-08, 0.286959, -0.957943, 1, -4.37114e-08, -2.42193e-17, -4.1873e-08, -0.957943, -0.286959, 43.253, 0.165864, 11.5281)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline13" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(4.30271e-10, 0.00984345, -0.999951, 1, -4.37114e-08, -3.07952e-15, -4.37093e-08, -0.999951, -0.00984345, 44.8898, 0.165864, 0.0710945)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline14" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-1.13907e-08, -0.260589, -0.96545, 1, -4.37114e-08, -3.07832e-15, -4.22012e-08, -0.96545, 0.260589, 42.8602, 0.165864, -12.9752)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline15" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-2.27493e-08, -0.520443, -0.853896, 1, -4.37114e-08, -3.58416e-15, -3.7325e-08, -0.853896, 0.520443, 38.1465, 0.165864, -23.3192)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline16" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-2.97877e-08, -0.681462, -0.731853, 1, -4.37114e-08, -3.24823e-15, -3.19903e-08, -0.731853, 0.681462, 31.6651, 0.165864, -31.6992)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline17" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-3.61952e-08, -0.82805, -0.560653, 1, -4.37114e-08, -2.77538e-15, -2.45069e-08, -0.560653, 0.82805, 22.4994, 0.165864, -38.9008)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline18" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-4.17626e-08, -0.955418, -0.295258, 1, -4.37114e-08, -3.97344e-15, -1.29061e-08, -0.295258, 0.955418, 11.2388, 0.165864, -43.5491)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline19" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-4.37113e-08, -0.999999, -0.00165796, 1, -4.37114e-08, -3.58692e-15, -7.24769e-11, -0.00165796, 0.999999, -0.0218353, 0.165864, -44.8585)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline20" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-4.21656e-08, -0.964636, 0.263587, 1, -4.37114e-08, -4.57305e-15, 1.15217e-08, 0.263587, 0.964636, -11.6753, 0.165864, -43.2872)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline21" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-3.75326e-08, -0.858647, 0.512568, 1, -4.37114e-08, -4.36465e-15, 2.2405e-08, 0.512568, 0.858647, -22.1503, 0.165864, -38.8353)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline22" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-3.24261e-08, -0.741824, 0.670595, 1, -4.37114e-08, -4.36465e-15, 2.93126e-08, 0.670595, 0.741824, -31.7742, 0.165864, -31.7647)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline23" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-2.18788e-08, -0.500529, 0.86572, 1, -4.37114e-08, -5.02912e-15, 3.78418e-08, 0.86572, 0.500529, -38.6485, 0.165864, -22.9919)
+mesh = SubResource("CapsuleMesh_siori")
+skeleton = NodePath("../../check1")
+
+[node name="roadline24" type="MeshInstance3D" parent="roundabout"]
+transform = Transform3D(-1.22749e-08, -0.280817, 0.959761, 1, -4.37114e-08, -5.35911e-15, 4.19525e-08, 0.959761, 0.280817, -43.2313, 0.165864, -11.9931)
 mesh = SubResource("CapsuleMesh_siori")
 skeleton = NodePath("../../check1")
 
@@ -329,7 +441,7 @@ skeleton = NodePath("../../check1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 1.6, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32935, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="yay" type="AudioStreamPlayer3D" parent="check1"]
@@ -340,42 +452,49 @@ stream = ExtResource("3_siori")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.75, 1.6, 31.75)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0910034, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check3" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.6, 45)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171799, 0, -4.54747e-13)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check4" type="Area3D" parent="."]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 31.75, 1.6, 31.75)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778008, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check5" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1.6, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188641, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check6" type="Area3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 31.75, 1.6, -31.75)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0717545, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check7" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.6, -45)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196907, 0, 2.27374e-13)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check8" type="Area3D" parent="."]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.75, 1.6, -31.75)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0811462, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="trees" type="Node3D" parent="."]
@@ -545,6 +664,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -103.984, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6376, 19.3342, 137.408)
 shape = SubResource("HeightMapShape3D_haunf")
+[node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]
