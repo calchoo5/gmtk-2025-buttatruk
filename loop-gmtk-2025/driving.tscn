@@ -845,11 +845,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -103.984, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6376, 19.3342, 137.408)
 shape = SubResource("HeightMapShape3D_haunf")
 
-[node name="dumbcar" parent="." groups=["car"] instance=ExtResource("1_fv0fp")]
+[node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 
 [node name="DrunkInterval" type="Timer" parent="."]
-[node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
+
+[node name="dumbcar2" parent="." instance=ExtResource("1_fv0fp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 
 [node name="store" parent="." instance=ExtResource("8_xjdu2")]
