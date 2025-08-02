@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://2qxh8nbilwm7"]
+[gd_scene load_steps=26 format=3 uid="uid://2qxh8nbilwm7"]
 
 [ext_resource type="PackedScene" uid="uid://dlr3fnmqv5ho1" path="res://dumbcar.tscn" id="1_fv0fp"]
 [ext_resource type="Script" uid="uid://bgk2lsl0o8h0s" path="res://driving.gd" id="1_h0d5d"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b8140s6i5iyj0" path="res://shit/sfx/Bruh Sound Effect #2.mp3" id="3_siori"]
 [ext_resource type="Texture2D" uid="uid://b4h1ueljb4d02" path="res://shit/images/biir.png" id="4_xjdu2"]
 [ext_resource type="PackedScene" uid="uid://hagds7ebwvtn" path="res://tree.tscn" id="5_w6orf"]
+[ext_resource type="PackedScene" uid="uid://bnjpift3pg8t" path="res://store.tscn" id="8_xjdu2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siori"]
 albedo_color = Color(0.187184, 0.317252, 0, 1)
@@ -664,8 +665,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -103.984, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6376, 19.3342, 137.408)
 shape = SubResource("HeightMapShape3D_haunf")
+
 [node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
+
+[node name="store" parent="." instance=ExtResource("8_xjdu2")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 12.6409, 2.60922, 387.056)
 
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]
