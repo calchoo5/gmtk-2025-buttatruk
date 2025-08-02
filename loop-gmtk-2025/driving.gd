@@ -26,12 +26,14 @@ var cardtitle = {
 	1:"An Ice Cold Beer",
 	2:"Karbon Faiba",
 	3:"Ying Yang Spinny Thang",
+	4:"Tungsten Cube"
 }
 
 var carddesc = {
 	1:"Extra points at the cost of nausea.\n (driving in my car, right after a beer!)",
 	2:"Less vehicle weight. May cause less grip.\n (i dont think this helps...)",
 	3:"Slap a turbo on it for better acceleration.\n (can always trust ol mate garrett)",
+	4:"More vehicle weight. Cube.\n (all praise the cube.)"
 }
 
 func _ready() -> void:
@@ -132,10 +134,6 @@ func _on_check_7_body_entered(body: Node3D) -> void:
 func _on_check_8_body_entered(body: Node3D) -> void:
 	if check7 && body.is_in_group("car"):
 		check8 = true
-
-
-func _on_vb_mouse_entered() -> void:
-	print("entered")
 
 func _on_card_1_pressed() -> void:
 	_on_upgrade_click(opt1)
