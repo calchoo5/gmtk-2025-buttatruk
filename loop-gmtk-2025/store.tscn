@@ -1,0 +1,190 @@
+[gd_scene load_steps=28 format=3 uid="uid://bnjpift3pg8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hi0p"]
+albedo_color = Color(0.9721, 0.917254, 0.791095, 1)
+metallic = 1.0
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_x7ts4"]
+material = SubResource("StandardMaterial3D_3hi0p")
+size = Vector3(15, 5, 7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x8qpf"]
+points = PackedVector3Array(-7.5, -2.5, -3.5, -7.5, 2.5, -3.5, 7.5, -2.5, -3.5, -7.5, -2.5, 3.5, -7.5, 2.5, 3.5, 7.5, 2.5, -3.5, 7.5, -2.5, 3.5, 7.5, 2.5, 3.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3f3m"]
+albedo_color = Color(0.212855, 0.433435, 0.486049, 1)
+metallic = 1.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_jdgcu"]
+material = SubResource("StandardMaterial3D_s3f3m")
+size = Vector3(15.5, 3, 7.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxxsk"]
+albedo_color = Color(1, 1, 0.894118, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_a4gqu"]
+material = SubResource("StandardMaterial3D_sxxsk")
+text = "da deelorship
+(no scam trust me)"
+font_size = 70
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxlhg"]
+albedo_color = Color(0.819608, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fsgxa"]
+material = SubResource("StandardMaterial3D_mxlhg")
+size = Vector3(1.2, 2.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecxbg"]
+albedo_color = Color(0.244776, 0.244776, 0.244776, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_nvomd"]
+material = SubResource("StandardMaterial3D_ecxbg")
+size = Vector3(3, 3.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sk1s"]
+albedo_color = Color(0.87451, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hayl1"]
+material = SubResource("StandardMaterial3D_0sk1s")
+size = Vector2(5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7j3g"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_jdax8"]
+material = SubResource("StandardMaterial3D_q7j3g")
+text = "5 dollar foot long!!!!!"
+font_size = 30
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afjsh"]
+albedo_color = Color(1, 1, 0, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_hi8wy"]
+material = SubResource("StandardMaterial3D_afjsh")
+text = "the all new sheep strangler.
+available now."
+font_size = 30
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmeuj"]
+albedo_color = Color(0, 0.67451, 0, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_xbkst"]
+material = SubResource("StandardMaterial3D_pmeuj")
+text = "15% APY per year!"
+font_size = 30
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw4l6"]
+albedo_color = Color(1, 0, 1, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_3wvf5"]
+material = SubResource("StandardMaterial3D_fw4l6")
+text = "certified pre-crashed!!!"
+font_size = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdyly"]
+albedo_color = Color(0, 1, 1, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_w4qhq"]
+material = SubResource("StandardMaterial3D_qdyly")
+text = "WE SELL BROKEN CARS"
+font_size = 40
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pejdj"]
+albedo_color = Color(0.805163, 0.000510186, 0.805441, 1)
+metallic = 1.0
+
+[sub_resource type="TextMesh" id="TextMesh_sqkq8"]
+material = SubResource("StandardMaterial3D_pejdj")
+text = "ask about our
+weiner."
+font_size = 60
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8qpf"]
+albedo_color = Color(0.151276, 0.151276, 0.151276, 1)
+metallic = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c176v"]
+material = SubResource("StandardMaterial3D_x8qpf")
+size = Vector2(15, 10)
+
+[node name="store" type="StaticBody3D"]
+
+[node name="storebase" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x7ts4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_x8qpf")
+
+[node name="roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.98716, 0)
+mesh = SubResource("PrismMesh_jdgcu")
+
+[node name="logo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.62912, 3.7967)
+mesh = SubResource("TextMesh_a4gqu")
+
+[node name="door1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -1.172, 3.48438)
+mesh = SubResource("BoxMesh_fsgxa")
+
+[node name="door2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, -1.172, 3.48438)
+mesh = SubResource("BoxMesh_fsgxa")
+
+[node name="dooirback" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.943525, 3.02777)
+mesh = SubResource("BoxMesh_nvomd")
+
+[node name="window" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.4, 0, 3.51216)
+mesh = SubResource("PlaneMesh_hayl1")
+
+[node name="window3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -7.51156, 0, 0.075912)
+mesh = SubResource("PlaneMesh_hayl1")
+
+[node name="window4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 7.50884, 0, 0.075912)
+mesh = SubResource("PlaneMesh_hayl1")
+
+[node name="window2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.4, 0, 3.51216)
+mesh = SubResource("PlaneMesh_hayl1")
+
+[node name="ad" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.981497, -0.191477, 0, 0.191477, 0.981497, 0, 0, 0, 1, -5.23459, 1.55318, 3.51286)
+mesh = SubResource("TextMesh_jdax8")
+
+[node name="ad2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49371, 1.55378, 3.5004)
+mesh = SubResource("TextMesh_hi8wy")
+
+[node name="ad3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999972, -0.0074525, 0, 0.0074525, 0.999972, 0, 0, 0, 1, -3.21387, -1.67459, 3.51286)
+mesh = SubResource("TextMesh_xbkst")
+skeleton = NodePath("../ad")
+
+[node name="ad4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.931926, 0.36265, 0, -0.36265, 0.931926, 0, 0, 0, 1, 3.02251, -1.40121, 3.54679)
+mesh = SubResource("TextMesh_3wvf5")
+
+[node name="ad5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.21541e-08, 0, 1, -0.362649, 0.931926, 0, -0.931926, -0.36265, -4.37114e-08, 7.50069, 0.844986, 0.0620871)
+mesh = SubResource("TextMesh_w4qhq")
+skeleton = NodePath("../ad4")
+
+[node name="ad6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.49952, 1, 0)
+mesh = SubResource("TextMesh_sqkq8")
+
+[node name="lot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.51543, 0, -2.4815, 10.9438)
+mesh = SubResource("PlaneMesh_c176v")

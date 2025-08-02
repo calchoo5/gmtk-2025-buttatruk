@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://2qxh8nbilwm7"]
 
+[ext_resource type="PackedScene" uid="uid://dlr3fnmqv5ho1" path="res://dumbcar.tscn" id="1_fv0fp"]
 [ext_resource type="Script" uid="uid://bgk2lsl0o8h0s" path="res://driving.gd" id="1_h0d5d"]
 [ext_resource type="Texture2D" uid="uid://d027yqjpjsdcn" path="res://shit/images/card.png" id="2_haunf"]
 [ext_resource type="Theme" uid="uid://chs4jxj5mv14x" path="res://highway.tres" id="3_dv6av"]
 [ext_resource type="AudioStream" uid="uid://b8140s6i5iyj0" path="res://shit/sfx/Bruh Sound Effect #2.mp3" id="3_siori"]
 [ext_resource type="Texture2D" uid="uid://b4h1ueljb4d02" path="res://shit/images/biir.png" id="4_xjdu2"]
 [ext_resource type="PackedScene" uid="uid://hagds7ebwvtn" path="res://tree.tscn" id="5_w6orf"]
-[ext_resource type="PackedScene" uid="uid://j4mn6ka2b5a4" path="res://car/wordcar.tscn" id="7_haunf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_siori"]
 albedo_color = Color(0.187184, 0.317252, 0, 1)
@@ -652,11 +652,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0149, 1.8089, 152.512)
 [node name="tree53" parent="trees" instance=ExtResource("5_w6orf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0149, 1.8089, 152.512)
 
-[node name="wordcar" parent="." instance=ExtResource("7_haunf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9072, 1.14196, 1.04654)
-
-[node name="wordcar" parent="." instance=ExtResource("7_haunf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9072, 1.14196, 1.04654)
+[node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
 
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]

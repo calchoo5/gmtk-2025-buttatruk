@@ -137,8 +137,9 @@ damping_relaxation = 2.0
 transform = Transform3D(-4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("TorusMesh_2r58r")
 
-[node name="followcam" parent="." instance=ExtResource("2_riqrm")]
-transform = Transform3D(-1, 1.56557e-08, -1.45851e-07, -2.26267e-08, 0.965926, 0.258819, 1.44933e-07, 0.258819, -0.965926, 0, 3, -4)
+[node name="followcam" parent="." node_paths=PackedStringArray("look_target") instance=ExtResource("2_riqrm")]
+transform = Transform3D(-1, 1.56557e-08, -1.45851e-07, -2.26267e-08, 0.965926, 0.258819, 1.44933e-07, 0.258819, -0.965926, -0.110466, 3.83942, -4.09321)
+look_target = NodePath("../butter")
 
 [node name="fartcan" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.359788, 0.356587, -1.59908)
