@@ -177,3 +177,10 @@ func _on_drunk_interval_timeout() -> void:
 		$stopwatch["theme_override_colors/font_color"] = Color.RED
 	else:
 		$stopwatch["theme_override_colors/font_color"] = Color.WHITE
+		
+
+
+func _on_shoparea_body_entered(body: Node3D) -> void:
+	if body.is_in_group("car"):
+		pass
+		
