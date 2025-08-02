@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://biicfwe3ws6pp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r58r"]
+albedo_color = Color(0.93845, 0.93845, 0.93845, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_22i6o"]
+material = SubResource("StandardMaterial3D_2r58r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qstov"]
+
+[sub_resource type="TextMesh" id="TextMesh_65hht"]
+material = SubResource("StandardMaterial3D_qstov")
+text = "Butter"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q67cg"]
+albedo_color = Color(1, 1, 0.541176, 1)
+metallic = 1.0
+rim = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_w5gfw"]
+material = SubResource("StandardMaterial3D_q67cg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u2ex"]
+metallic_specular = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4q4aj"]
+material = SubResource("StandardMaterial3D_0u2ex")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.1
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spfpi"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e17hh"]
+material = SubResource("StandardMaterial3D_spfpi")
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.1
+
+[node name="ButterModel" type="Node3D"]
+
+[node name="butterwrap" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.03683e-07, -1.02, -4.45856e-08, 0, -4.45856e-08, 1.02, -2.372, 4.45856e-08, 1.9489e-15, 0, 0.784, 0)
+mesh = SubResource("BoxMesh_22i6o")
+skeleton = NodePath("../buttertext")
+
+[node name="buttertext" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.74846e-07, -4, -1.74846e-07, 0, -1.74846e-07, 4, -4, 1.74846e-07, 7.64274e-15, 0, 1.22385, 0)
+mesh = SubResource("TextMesh_65hht")
+
+[node name="butter" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.01796, 0, 0.784083, 0)
+mesh = SubResource("BoxMesh_w5gfw")
+
+[node name="fartpipe" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.413405, 0.354806, -1.55684)
+mesh = SubResource("CylinderMesh_4q4aj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fartpipe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56519e-05, 0.00159097, 0)
+mesh = SubResource("CylinderMesh_e17hh")
+
+[node name="fartpipe2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.307157, 0.354806, -1.55684)
+mesh = SubResource("CylinderMesh_4q4aj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fartpipe2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.56519e-05, 0.00159097, 0)
+mesh = SubResource("CylinderMesh_e17hh")

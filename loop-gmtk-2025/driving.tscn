@@ -616,7 +616,7 @@ mesh = SubResource("CapsuleMesh_siori")
 skeleton = NodePath("../../check1")
 
 [node name="check1" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 1.6, 0)
+transform = Transform3D(-0.0080808, 0, 0.999967, 0, 1, 0, -0.999967, 0, -0.0080808, 0.658459, 1.6, 42.8111)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32935, 0, 0)
@@ -627,49 +627,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56048, 0, 0)
 stream = ExtResource("3_siori")
 
 [node name="check2" type="Area3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -31.75, 1.6, 31.75)
+transform = Transform3D(-0.712798, 0, 0.70137, 0, 1, 0, -0.70137, 0, -0.712798, 32.3206, 1.6, 31.8049)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0910034, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check3" type="Area3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.6, 45)
+transform = Transform3D(-0.999967, 0, -0.00808084, 0, 1, 0, 0.00808084, 0, -0.999967, 45.3136, 1.6, -0.051146)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.171799, 0, -4.54747e-13)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check4" type="Area3D" parent="."]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 31.75, 1.6, 31.75)
+transform = Transform3D(0.70137, 0, 0.712798, 0, 1, 0, -0.712798, 0, 0.70137, 31.8074, 1.6, -31.693)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0778008, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check5" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1.6, 0)
+transform = Transform3D(-0.0080808, 0, 0.999967, 0, 1, 0, -0.999967, 0, -0.0080808, -0.0486106, 1.6, -44.686)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188641, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check6" type="Area3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 31.75, 1.6, -31.75)
+transform = Transform3D(-0.712798, 0, 0.70137, 0, 1, 0, -0.70137, 0, -0.712798, -31.6905, 1.6, -31.1799)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0717545, 0, 0)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check7" type="Area3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.6, -45)
+transform = Transform3D(-0.999967, 0, -0.00808084, 0, 1, 0, 0.00808084, 0, -0.999967, -44.6835, 1.6, 0.676126)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.196907, 0, 2.27374e-13)
 shape = SubResource("BoxShape3D_dv6av")
 
 [node name="check8" type="Area3D" parent="."]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -31.75, 1.6, -31.75)
+transform = Transform3D(0.70137, 0, 0.712798, 0, 1, 0, -0.712798, 0, 0.70137, -31.1774, 1.6, 32.318)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="check8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0811462, 0, 0)
@@ -844,7 +844,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6376, 19.3342, 137.408)
 shape = SubResource("HeightMapShape3D_haunf")
 
 [node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4089, 0.600794, -4.08689)
+transform = Transform3D(-0.0903024, 0, 0.995914, 0, 1, 0, -0.995914, 0, -0.0903024, -7.98253, 0.600794, 45.0165)
 
 [node name="DrunkInterval" type="Timer" parent="."]
 

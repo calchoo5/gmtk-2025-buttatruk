@@ -160,6 +160,8 @@ func _on_upgrade_click(index : int) -> void:
 			$dumbcar.get_upgrade("Fiber")
 		3: #turbo acceleration
 			$dumbcar.get_upgrade("YingYang")
+		4:
+			$dumbcar.get_upgrade("Cube")
 		_:
 			print("invalid")
 

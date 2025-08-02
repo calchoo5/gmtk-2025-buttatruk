@@ -35,13 +35,16 @@ func getPointsMult() -> int:
 func get_upgrade(name : String):
 	match name:
 		"Beer":
-			pointsMult += 0.5
+			pointsMult += 1
 		"Fiber":
-			brakepower -= 0.1
+			mass -= 100
 		"YingYang":
 			max_enginepower += 50
+		"Cube":
+			mass += 100
 	print(max_enginepower)
 	print(pointsMult)
+	print(mass)
 
 func _physics_process(delta: float) -> void:
 	#steering
