@@ -16,6 +16,11 @@ var shift2 = true
 
 var pointsMult : int = 1
 
+func flip_directions() -> void:
+	maxsteer *= -1
+
+func get_direction() -> int:
+	return sign(maxsteer)
 
 func _process(delta: float) -> void:
 	buffer += 1
@@ -29,7 +34,6 @@ func getPointsMult() -> int:
 func get_upgrade(name : String):
 	match name:
 		"Beer":
-			maxsteer *= -1
 			pointsMult += 0.5
 		"Fiber":
 			brakepower -= 0.1
