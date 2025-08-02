@@ -2,7 +2,7 @@ extends Camera3D
 
 @export var look_target: Node3D
 @export var distance = 4.0
-@export var height = 1.5
+@export var height = 2
 
 
 func _ready() -> void:

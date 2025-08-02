@@ -30,7 +30,6 @@ var carddesc = {
 	3:"Slap a turbo on it for better acceleration.\n (can always trust ol mate garrett)"
 }
 
-
 func _ready() -> void:
 	Transition.playback("white_fade")
 
@@ -75,8 +74,8 @@ func _on_check_1_body_entered(body: Node3D) -> void:
 			$check1/yay.play()
 		else:
 			print("fail")
-			get_tree().paused = true
-			_card()
+			#get_tree().paused = true
+			#_card()
 			time = 0
 			start = true
 		check1 = true
