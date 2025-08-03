@@ -1,0 +1,155 @@
+[gd_scene load_steps=5 format=3 uid="uid://jvim2mhxod1i"]
+
+[ext_resource type="Script" uid="uid://clgo4ipubdwd7" path="res://settings.gd" id="1_6eyaj"]
+[ext_resource type="AudioStream" uid="uid://f5kvx44j6g6u" path="res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3" id="2_8u653"]
+[ext_resource type="Theme" uid="uid://chs4jxj5mv14x" path="res://highway.tres" id="3_bwtow"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05lnj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[node name="pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="settin" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -516.0
+offset_top = -250.0
+offset_right = -216.0
+offset_bottom = 250.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0.431373, 0.317647, 1)
+script = ExtResource("1_6eyaj")
+
+[node name="sfx" type="AudioStreamPlayer" parent="settin"]
+stream = ExtResource("2_8u653")
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -240.0
+offset_right = 140.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -235.0
+offset_right = 135.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.431373, 0.317647, 1)
+
+[node name="settings" type="VBoxContainer" parent="settin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -200.0
+offset_right = 128.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme = ExtResource("3_bwtow")
+theme_override_font_sizes/font_size = 70
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="settin/settings"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_05lnj")
+
+[node name="fsc" type="CheckButton" parent="settin/settings"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("3_bwtow")
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen           "
+alignment = 1
+
+[node name="mvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="mvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="sfxvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX Volume"
+
+[node name="sfxvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="musvollab" type="Label" parent="settin/settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "BGM Volume"
+
+[node name="musvol" type="HSlider" parent="settin/settings"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="resume" type="Button" parent="settin/settings"]
+layout_mode = 2
+theme = ExtResource("3_bwtow")
+text = "Resume"
+expand_icon = true
+
+[node name="quit" type="Button" parent="settin/settings"]
+layout_mode = 2
+theme = ExtResource("3_bwtow")
+text = "Quit"
+
+[connection signal="toggled" from="settin/settings/fsc" to="settin" method="_on_fsc_toggled"]
+[connection signal="value_changed" from="settin/settings/mvol" to="settin" method="_on_mvol_value_changed"]
+[connection signal="value_changed" from="settin/settings/sfxvol" to="settin" method="_on_sfxvol_value_changed"]
+[connection signal="value_changed" from="settin/settings/musvol" to="settin" method="_on_musvol_value_changed"]
+[connection signal="pressed" from="settin/settings/resume" to="settin" method="_on_resume_pressed"]
+[connection signal="pressed" from="settin/settings/quit" to="settin" method="_on_quit_pressed"]

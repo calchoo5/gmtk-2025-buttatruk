@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://2qxh8nbilwm7"]
+[gd_scene load_steps=30 format=3 uid="uid://2qxh8nbilwm7"]
 
 [ext_resource type="PackedScene" uid="uid://dlr3fnmqv5ho1" path="res://dumbcar.tscn" id="1_fv0fp"]
 [ext_resource type="Script" uid="uid://bgk2lsl0o8h0s" path="res://driving.gd" id="1_h0d5d"]
 [ext_resource type="Texture2D" uid="uid://d027yqjpjsdcn" path="res://shit/images/card.png" id="2_haunf"]
+[ext_resource type="PackedScene" uid="uid://jvim2mhxod1i" path="res://pause.tscn" id="2_o22wi"]
 [ext_resource type="Theme" uid="uid://chs4jxj5mv14x" path="res://highway.tres" id="3_dv6av"]
 [ext_resource type="AudioStream" uid="uid://b8140s6i5iyj0" path="res://shit/sfx/Bruh Sound Effect #2.mp3" id="3_siori"]
 [ext_resource type="Texture2D" uid="uid://b4h1ueljb4d02" path="res://shit/images/biir.png" id="4_xjdu2"]
@@ -88,6 +89,13 @@ size = Vector3(14.8534, 5, 5.84814)
 
 [node name="driving" type="Node3D"]
 script = ExtResource("1_h0d5d")
+
+[node name="pause" parent="." instance=ExtResource("2_o22wi")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 0
 
 [node name="rogue" type="CanvasLayer" parent="."]
 process_mode = 3
