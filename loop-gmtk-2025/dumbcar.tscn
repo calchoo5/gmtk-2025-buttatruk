@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c34pawyjx8m80" path="res://dumbcar.gd" id="1_xlo5i"]
 [ext_resource type="PackedScene" uid="uid://bdr8bxxd5ubr7" path="res://followcam.tscn" id="2_riqrm"]
 [ext_resource type="AudioStream" uid="uid://f5kvx44j6g6u" path="res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3" id="3_riqrm"]
-[ext_resource type="PackedScene" uid="uid://ogv1yxkcgkbp" path="res://car models/car_model.tscn" id="4_2r58r"]
+[ext_resource type="PackedScene" uid="uid://d307bkds1hrno" path="res://car models/blahaj_model.tscn" id="4_2r58r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqrm"]
 albedo_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
@@ -37,7 +37,7 @@ max_polyphony = 10
 bus = &"SFX"
 
 [node name="frontleft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.501, 1.25526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.454, 2)
 use_as_steering = true
 wheel_roll_influence = 0.5
 wheel_friction_slip = 0.5
@@ -51,7 +51,7 @@ transform = Transform3D(-4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0, 1, 0, 0
 mesh = SubResource("TorusMesh_2r58r")
 
 [node name="frontright" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 0.501, 1.255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 0.454, 2)
 use_as_steering = true
 wheel_roll_influence = 0.5
 wheel_friction_slip = 0.5
@@ -65,7 +65,7 @@ transform = Transform3D(-4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0, 1, 0, 0
 mesh = SubResource("TorusMesh_2r58r")
 
 [node name="rearleft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.501, -1.331)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742, 0.454, -0.559)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_friction_slip = 0.5
@@ -79,7 +79,7 @@ transform = Transform3D(-4.37114e-08, -1.5, 0, 1, -6.55671e-08, 0, 0, 0, 1, 0, 0
 mesh = SubResource("TorusMesh_2r58r")
 
 [node name="rearright" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 0.501, -1.33134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741593, 0.468359, -0.559307)
 use_as_traction = true
 wheel_roll_influence = 0.5
 wheel_friction_slip = 0.5
@@ -99,4 +99,4 @@ shape = SubResource("ConvexPolygonShape3D_2r58r")
 [node name="Model" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="CarModel" parent="Model" instance=ExtResource("4_2r58r")]
+[node name="BlahajModel" parent="Model" instance=ExtResource("4_2r58r")]

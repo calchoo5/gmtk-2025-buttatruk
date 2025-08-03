@@ -24,6 +24,7 @@ var models: Dictionary[String,PackedScene] = {
 	"word" : load("res://car models/word_model.tscn"),
 	"hotdog" : load("res://car models/hotdog_model.tscn"),
 	"car" : load("res://car models/car_model.tscn"),
+	"blahaj" : load("res://car models/blahaj_model.tscn"),
 }
 
 var frontleftPos : Dictionary[String,Vector3] = {
@@ -31,6 +32,7 @@ var frontleftPos : Dictionary[String,Vector3] = {
 	"word" : Vector3(0.774,0.501,1.255),
 	"hotdog" : Vector3(0.75,0.254,1.0),
 	"car" : Vector3(0.963,0.381,0.888),
+	"blahaj" : Vector3(0.774,0.454,2.0),
 }
 
 var frontrightPos : Dictionary[String,Vector3] = {
@@ -38,6 +40,7 @@ var frontrightPos : Dictionary[String,Vector3] = {
 	"word" : Vector3(-0.774,0.501,-1.255),
 	"hotdog" : Vector3(-0.75,0.254,1.0),
 	"car" : Vector3(-0.963,0.381,0.888),
+	"blahaj" : Vector3(-0.774,0.454,2.0),
 	
 }
 
@@ -46,6 +49,7 @@ var rearleftPos : Dictionary[String,Vector3] = {
 	"word" : Vector3(0.774,0.501,1.331),
 	"hotdog" : Vector3(0.75,0.254,-1.0),
 	"car" : Vector3(0.963,0.381,-0.785),
+	"blahaj" : Vector3(0.742,0.454,-0.559),
 	
 }
 
@@ -54,14 +58,16 @@ var rearrightPos : Dictionary[String,Vector3] = {
 	"word" : Vector3(-0.774,0.501,-1.331),
 	"hotdog" : Vector3(-0.75,0.254,-1.0),
 	"car" : Vector3(-0.963,0.381,-0.785),
+	"blahaj" : Vector3(-0.742,0.454,-0.559),
 	
 }
 
 var sounds : Dictionary[String,AudioStream] = {
 	"butter" : load("res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3"),
 	"word" : load("res://shit/sfx/car.mp3"),
-	"hotdog" : load("res://shit/sfx/car.mp3"),
+	"hotdog" : load("res://shit/sfx/chomp-155392.mp3"),
 	"car" : load("res://shit/sfx/Bruh Sound Effect #2.mp3"),
+	"blahaj" : load("res://shit/sfx/bubble-sound-43207.mp3")
 }
 #[max_steer, max_engine, brakepower, mass, wheel_friction]
 var stats : Dictionary[String,Array] = {
@@ -69,12 +75,13 @@ var stats : Dictionary[String,Array] = {
 	"word" : [2.0,500,2,100,3.0],
 	"car" : [2.1,700,8,200,6.0],
 	"hotdog" : [2.2,900,11,250,5.0],
+	"blahaj" : [2.1,700,8,200,6.0],
 }
 
 var curr_model = "null"
 
 func _ready() -> void:
-	change_model("butter")
+	change_model("blahaj")
 
 func _input(event: InputEvent) -> void:
 	if(Input.is_key_pressed(KEY_1)):
@@ -85,9 +92,13 @@ func _input(event: InputEvent) -> void:
 		change_model("car")
 	elif(Input.is_key_pressed(KEY_4)):
 		change_model("hotdog")
+	elif(Input.is_key_label_pressed(KEY_5)):
+		change_model("blahaj")
 
 func change_model(model : String) -> void:
 	if(model != curr_model):
+		curr_model = model
+		
 		for child in $Model.get_children():
 			child.queue_free()
 		$Model.add_child(models[model].instantiate())
@@ -95,6 +106,7 @@ func change_model(model : String) -> void:
 		$frontright.position = frontrightPos[model]
 		$rearleft.position = rearleftPos[model]
 		$rearright.position = rearrightPos[model]
+		print($frontleft.position)
 		$fartcan.stream = sounds[model]
 		
 		maxsteer = stats[model][0]
@@ -105,6 +117,7 @@ func change_model(model : String) -> void:
 		$frontright.wheel_friction_slip = stats[model][4]
 		$rearleft.wheel_friction_slip = stats[model][4]
 		$rearright.wheel_friction_slip = stats[model][4]
+		
 
 func flip_directions() -> void:
 	maxsteer *= -1
