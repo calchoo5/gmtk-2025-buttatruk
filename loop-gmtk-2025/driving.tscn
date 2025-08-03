@@ -100,6 +100,7 @@ grow_horizontal = 0
 
 [node name="shopgui" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="shopgui"]
 anchors_preset = 15
@@ -130,10 +131,10 @@ columns = 3
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Butter Car - 0 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+Your starter car. Slow, slippery,
+and salty. And heavy."
 icon = ExtResource("4_yvb2a")
 
 [node name="car2" type="Button" parent="shopgui/gridcont"]
@@ -150,7 +151,7 @@ icon = ExtResource("4_yvb2a")
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = " - 50 Points
 
 Doesn't get more literal than this.
 Fast, light, and slippery."
@@ -1016,6 +1017,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51743, -0.0402441, -2.4241)
 shape = SubResource("BoxShape3D_xjdu2")
 
 [connection signal="pressed" from="shopgui/gridcont/car1" to="." method="_on_car_1_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car2" to="." method="_on_car_2_pressed"]
 [connection signal="pressed" from="shopgui/leave" to="." method="_on_leave_pressed"]
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]

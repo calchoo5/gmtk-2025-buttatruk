@@ -196,7 +196,9 @@ func _on_leave_pressed() -> void:
 
 func _on_car_1_pressed() -> void:
 	$dumbcar.change_model("butter")
-
-
+	
 func _on_car_2_pressed() -> void:
-	pass # Replace with function body.
+	if points > 50:
+		points -= 50
+		$dumbcar.change_model("word")
+		
