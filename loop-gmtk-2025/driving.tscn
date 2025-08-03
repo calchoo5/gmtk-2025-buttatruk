@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://2qxh8nbilwm7"]
+[gd_scene load_steps=31 format=3 uid="uid://2qxh8nbilwm7"]
 
 [ext_resource type="PackedScene" uid="uid://dlr3fnmqv5ho1" path="res://dumbcar.tscn" id="1_fv0fp"]
 [ext_resource type="Script" uid="uid://bgk2lsl0o8h0s" path="res://driving.gd" id="1_h0d5d"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://chs4jxj5mv14x" path="res://highway.tres" id="3_dv6av"]
 [ext_resource type="AudioStream" uid="uid://b8140s6i5iyj0" path="res://shit/sfx/Bruh Sound Effect #2.mp3" id="3_siori"]
 [ext_resource type="Texture2D" uid="uid://b4h1ueljb4d02" path="res://shit/images/biir.png" id="4_xjdu2"]
+[ext_resource type="Texture2D" uid="uid://crwk46wi503j5" path="res://icon.svg" id="4_yvb2a"]
 [ext_resource type="PackedScene" uid="uid://hagds7ebwvtn" path="res://tree.tscn" id="5_w6orf"]
 [ext_resource type="PackedScene" uid="uid://bnjpift3pg8t" path="res://store.tscn" id="8_xjdu2"]
 
@@ -96,6 +97,140 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 0
+
+[node name="shopgui" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="shopgui"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2)
+
+[node name="gridcont" type="GridContainer" parent="shopgui"]
+custom_minimum_size = Vector2(1200, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -250.0
+offset_right = 600.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="car1" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car2" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car3" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car4" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car5" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car6" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car7" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car8" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="car9" type="Button" parent="shopgui/gridcont"]
+layout_mode = 2
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 20
+text = "Word Car - 50 Points
+
+Doesn't get more literal than this.
+Fast, light, and slippery."
+icon = ExtResource("4_yvb2a")
+
+[node name="leave" type="Button" parent="shopgui"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = -143.0
+offset_right = 63.5
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_dv6av")
+theme_override_font_sizes/font_size = 75
+text = "Exit"
 
 [node name="rogue" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -880,6 +1015,8 @@ transform = Transform3D(-0.659726, 0, -0.751506, 0, 1, 0, 0.751506, 0, -0.659726
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51743, -0.0402441, -2.4241)
 shape = SubResource("BoxShape3D_xjdu2")
 
+[connection signal="pressed" from="shopgui/gridcont/car1" to="." method="_on_car_1_pressed"]
+[connection signal="pressed" from="shopgui/leave" to="." method="_on_leave_pressed"]
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]
 [connection signal="pressed" from="rogue/cards/card2" to="." method="_on_card_2_pressed"]

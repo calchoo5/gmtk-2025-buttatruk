@@ -181,5 +181,22 @@ func _on_drunk_interval_timeout() -> void:
 		
 func _on_shoparea_body_entered(body: Node3D) -> void:
 	if body.is_in_group("car"):
-		pass
+		get_tree().paused = true
+		$shopgui.show()
 		
+		
+		
+
+
+func _on_leave_pressed() -> void:
+	get_tree().paused = false
+	$shopgui.hide()
+	
+
+
+func _on_car_1_pressed() -> void:
+	$dumbcar.change_model("butter")
+
+
+func _on_car_2_pressed() -> void:
+	pass # Replace with function body.
