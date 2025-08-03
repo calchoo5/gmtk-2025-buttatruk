@@ -26,14 +26,26 @@ var cardtitle = {
 	1:"An Ice Cold Beer",
 	2:"Karbon Faiba",
 	3:"Ying Yang Spinny Thang",
-	4:"Tungsten Cube"
+	4:"Tungsten Cube",
+	5:"Buttery Tires",
+	6:"Mattress Springs",
+	7:"Cinder Block Springs",
+	8:"Brake Delete",
+	9:"Gorilla Brakes",
+	10:"Rat Trap tires"
 }
 
 var carddesc = {
 	1:"Extra points at the cost of nausea.\n (driving in my car, right after a beer!)",
-	2:"Less vehicle weight. May cause less grip.\n (i dont think this helps...)",
-	3:"Slap a turbo on it for better acceleration.\n (can always trust ol mate garrett)",
-	4:"More vehicle weight. Cube.\n (all praise the cube.)"
+	2:"Replace parts with Karbon Faiba.\n (Karbon Faiba!)",
+	3:"Slap a turbo on it for better speed.\n (can always trust ol mate garrett)",
+	4:"Throw in a tungsten cube to increase weight.\n (all praise the cube.)",
+	5:"Spread butter on them to keep them slick.\n (wonder what it tastes like...)",
+	6:"Why would you do this. Suspension becomes slack.\n (where'd my mattress go?)",
+	7:"This is even worse. Suspension becomes stiff.\n (i stole that from the deelorship.)",
+	8:"Who needs those when you can brake caveman style.\n (i hope you have good shoes)",
+	9:"Grip the brakes with the force of a thousand gorillas.\n (OOGH OUGH AAAAGH AAAAAAAGHAAAAAAAAA)",
+	10:"Just stick em on there. That aint goin nowhere.\n (what are you trying to catch with that?)"
 }
 
 func _ready() -> void:
@@ -162,6 +174,18 @@ func _on_upgrade_click(index : int) -> void:
 			$dumbcar.get_upgrade("YingYang")
 		4:
 			$dumbcar.get_upgrade("Cube")
+		5:
+			$dumbcar.get_upgrade("Butter")
+		6:
+			$dumbcar.get_upgrade("Mattress")
+		7:
+			$dumbcar.get_upgrade("Cinder")
+		8:
+			$dumbcar.get_upgrade("Caveman")
+		9:
+			$dumbcar.get_upgrade("Gorilla")
+		10:
+			$dumbcar.get_upgrade("Rat")
 		_:
 			print("invalid")
 
@@ -198,7 +222,7 @@ func _on_car_1_pressed() -> void:
 	$dumbcar.change_model("butter")
 	
 func _on_car_2_pressed() -> void:
-	if points > 50:
+	if points == 0:
 		points -= 50
 		$dumbcar.change_model("word")
 		

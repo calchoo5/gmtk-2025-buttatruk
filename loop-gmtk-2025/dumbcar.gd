@@ -2,8 +2,8 @@ extends VehicleBody3D
 
 @export var maxsteer = 0.9
 @export var max_enginepower = 300
-@export var brakepower = 1
-@export var handbrakepower = 2
+@export var brakepower = 2
+@export var handbrakepower = 3
 @export var steerdamp = 2
 
 var additional_enginepower : int = 0
@@ -57,6 +57,12 @@ var rearrightPos : Dictionary[String,Vector3] = {
 	
 }
 
+var sounds : Dictionary[String,AudioStream] = {
+	"butter" : load("res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3"),
+	"word" : load("res://shit/sfx/car.mp3"),
+	"hotdog" : load("res://shit/sfx/car.mp3"),
+	"car" : load("res://shit/sfx/Bruh Sound Effect #2.mp3"),
+}
 #[max_steer, max_engine, brakepower, mass, wheel_friction]
 var stats : Dictionary[String,Array] = {
 	"butter" : [0.9,300,1,400,0.5],
@@ -89,6 +95,7 @@ func change_model(model : String) -> void:
 		$frontright.position = frontrightPos[model]
 		$rearleft.position = rearleftPos[model]
 		$rearright.position = rearrightPos[model]
+		$fartcan.stream = sounds[model]
 		
 		maxsteer = stats[model][0]
 		max_enginepower = stats[model][1]
@@ -120,11 +127,35 @@ func get_upgrade(name : String):
 		"Beer":
 			pointsMult += 1
 		"Fiber":
-			mass -= 100
+			mass -= 20
 		"YingYang":
 			additional_enginepower += 50
 		"Cube":
-			mass += 100
+			mass += 20
+		"Butter":
+			$rearleft.wheel_friction_slip -= 0.05
+			$rearright.wheel_friction_slip -= 0.05
+			$frontleft.wheel_friction_slip -= 0.05
+			$frontright.wheel_friction_slip -= 0.05
+		"Mattress":
+			$rearleft.suspension_stiffness -= 20
+			$rearright.suspension_stiffness -= 20
+			$frontleft.suspension_stiffness -= 20
+			$frontright.suspension_stiffness -= 20
+		"Cinder":
+			$rearleft.suspension_stiffness += 20
+			$rearright.suspension_stiffness += 20
+			$frontleft.suspension_stiffness += 20
+			$frontright.suspension_stiffness += 20
+		"Caveman":
+			brakepower = 1
+		"Gorilla":
+			brakepower += 5
+		"Rat":
+			$rearleft.wheel_friction_slip += 0.2
+			$rearright.wheel_friction_slip += 0.2
+			$frontleft.wheel_friction_slip += 0.2
+			$frontright.wheel_friction_slip += 0.2
 	print(max_enginepower)
 	print(pointsMult)
 	print(mass)
