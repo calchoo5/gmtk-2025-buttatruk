@@ -57,7 +57,7 @@ var rearrightPos : Dictionary[String,Vector3] = {
 var curr_model = "null"
 
 func _ready() -> void:
-	change_model("word")
+	change_model("butter")
 
 func change_model(model : String) -> void:
 	if(model != curr_model):

@@ -145,7 +145,7 @@ func _on_card_2_pressed() -> void:
 func _on_card_3_pressed() -> void:
 	_on_upgrade_click(opt3)
 
-var drunkInterval = 10.0
+var drunkInterval = 30.0
 
 func _on_upgrade_click(index : int) -> void:
 	$rogue.hide()

@@ -42,6 +42,7 @@ bottom_radius = 0.04
 height = 0.1
 
 [node name="ButterModel" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.66409, 0)
 
 [node name="butterwrap" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.03683e-07, -1.02, -4.45856e-08, 0, -4.45856e-08, 1.02, -2.372, 4.45856e-08, 1.9489e-15, 0, 0.784, 0)
