@@ -18,8 +18,42 @@ var pointsMult : int = 1
 
 var models: Dictionary[String,PackedScene] = {
 	"butter" : load("res://car models/butter_model.tscn"),
-	"word" : load("res://car models/word_model.tscn")
+	"word" : load("res://car models/word_model.tscn"),
+	"hotdog" : load("res://car models/hotdog_model.tscn"),
+	"car" : load("res://car models/car_model.tscn"),
 }
+
+var frontleftPos : Dictionary[String,Vector3] = {
+	"butter" : Vector3(0.75,0.254,1.0),
+	"word" : Vector3(0.774,0.501,1.255),
+	"hotdog" : Vector3(0.75,0.254,1.0),
+	"car" : Vector3(0.963,0.381,0.888),
+}
+
+var frontrightPos : Dictionary[String,Vector3] = {
+	"butter" : Vector3(-0.75,0.254,1.0),
+	"word" : Vector3(-0.774,0.501,-1.255),
+	"hotdog" : Vector3(-0.75,0.254,1.0),
+	"car" : Vector3(-0.963,0.381,0.888),
+	
+}
+
+var rearleftPos : Dictionary[String,Vector3] = {
+	"butter" : Vector3(0.75,0.254,-1.0),
+	"word" : Vector3(0.774,0.501,1.331),
+	"hotdog" : Vector3(0.75,0.254,-1.0),
+	"car" : Vector3(0.963,0.381,-0.785),
+	
+}
+
+var rearrightPos : Dictionary[String,Vector3] = {
+	"butter" : Vector3(-0.75,0.254,-1.0),
+	"word" : Vector3(-0.774,0.501,-1.331),
+	"hotdog" : Vector3(-0.75,0.254,-1.0),
+	"car" : Vector3(-0.963,0.381,-0.785),
+	
+}
+
 var curr_model = "null"
 
 func _ready() -> void:
@@ -30,6 +64,10 @@ func change_model(model : String) -> void:
 		for child in $Model.get_children():
 			child.queue_free()
 		$Model.add_child(models[model].instantiate())
+		$frontleft.position = frontleftPos[model]
+		$frontright.position = frontrightPos[model]
+		$rearleft.position = rearleftPos[model]
+		$rearright.position = rearrightPos[model]
 
 func flip_directions() -> void:
 	maxsteer *= -1
