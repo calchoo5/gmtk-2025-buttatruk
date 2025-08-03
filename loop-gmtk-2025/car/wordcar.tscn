@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bdr8bxxd5ubr7" path="res://followcam.tscn" id="1_yx6sj"]
 [ext_resource type="AudioStream" uid="uid://ct43saqji04e1" path="res://shit/sfx/car.mp3" id="3_sxev5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx6sj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbc7g"]
 albedo_color = Color(0.415686, 0.0509804, 0, 1)
 
 [sub_resource type="TextMesh" id="TextMesh_u08ky"]
-material = SubResource("StandardMaterial3D_yx6sj")
+material = SubResource("StandardMaterial3D_bbc7g")
 text = "CAR"
 font_size = 100
 
