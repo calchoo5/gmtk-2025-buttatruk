@@ -9,8 +9,7 @@ text = "CAR"
 font_size = 127
 
 [node name="WordModel" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.97407, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.84984e-08, 0, -19.6963, 0, 1, 0, 1.56706, 0, -8.60953e-07, 0, 1, 0)
+transform = Transform3D(-6.84984e-08, 0, -19.6963, 0, 1, 0, 1.56706, 0, -8.60953e-07, 0, -1.12055, 0)
 mesh = SubResource("TextMesh_1kqav")

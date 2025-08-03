@@ -45,10 +45,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x5npn")
 
 [node name="HotdogModel" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.89511, 0)
 
 [node name="hotdog2" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0.789692, 0)
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, -1.105, 0)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_qnybi")
 skeleton = NodePath("")
