@@ -6,6 +6,7 @@ extends VehicleBody3D
 @export var handbrakepower = 3
 @export var steerdamp = 2
 
+var additional_enginepower : int = 0
 var enginepower = max_enginepower
 var pedal = 0.0
 var rpm = 0.0
@@ -15,6 +16,8 @@ var shift1 = true
 var shift2 = true
 
 var pointsMult : int = 1
+
+
 
 var models: Dictionary[String,PackedScene] = {
 	"butter" : load("res://car models/butter_model.tscn"),
@@ -60,11 +63,28 @@ var sounds : Dictionary[String,AudioStream] = {
 	"hotdog" : load("res://shit/sfx/car.mp3"),
 	"car" : load("res://shit/sfx/Bruh Sound Effect #2.mp3"),
 }
+#[max_steer, max_engine, brakepower, mass, wheel_friction]
+var stats : Dictionary[String,Array] = {
+	"butter" : [0.9,300,1,400,0.5],
+	"word" : [2.0,500,5,100,3.0],
+	"car" : [2.1,700,8,200,6.0],
+	"hotdog" : [2.2,900,11,250,5.0],
+}
 
 var curr_model = "null"
 
 func _ready() -> void:
 	change_model("butter")
+
+func _input(event: InputEvent) -> void:
+	if(Input.is_key_pressed(KEY_1)):
+		change_model("butter")
+	elif(Input.is_key_pressed(KEY_2)):
+		change_model("word")
+	elif(Input.is_key_pressed(KEY_3)):
+		change_model("car")
+	elif(Input.is_key_pressed(KEY_4)):
+		change_model("hotdog")
 
 func change_model(model : String) -> void:
 	if(model != curr_model):
@@ -76,6 +96,15 @@ func change_model(model : String) -> void:
 		$rearleft.position = rearleftPos[model]
 		$rearright.position = rearrightPos[model]
 		$fartcan.stream = sounds[model]
+		
+		maxsteer = stats[model][0]
+		max_enginepower = stats[model][1]
+		brakepower = stats[model][2]
+		mass = stats[model][3]
+		$frontleft.wheel_friction_slip = stats[model][4]
+		$frontright.wheel_friction_slip = stats[model][4]
+		$rearleft.wheel_friction_slip = stats[model][4]
+		$rearright.wheel_friction_slip = stats[model][4]
 
 func flip_directions() -> void:
 	maxsteer *= -1
@@ -100,7 +129,7 @@ func get_upgrade(name : String):
 		"Fiber":
 			mass -= 20
 		"YingYang":
-			max_enginepower += 50
+			additional_enginepower += 50
 		"Cube":
 			mass += 20
 		"Butter":
@@ -200,7 +229,7 @@ func fart():
 			print("shift1")
 			enginepower = -10
 			await get_tree().create_timer(0.2).timeout
-			enginepower = max_enginepower 
+			enginepower = max_enginepower + additional_enginepower
 			shift1 = false
 			shift2 = true
 		amount = 350
@@ -209,7 +238,7 @@ func fart():
 			print("shift2")
 			enginepower = -10
 			await get_tree().create_timer(0.2).timeout
-			enginepower = max_enginepower 
+			enginepower = max_enginepower + additional_enginepower
 			shift2 = false
 			shift1 = true
 		amount = 450
