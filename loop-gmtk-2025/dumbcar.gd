@@ -65,8 +65,8 @@ var sounds : Dictionary[String,AudioStream] = {
 }
 #[max_steer, max_engine, brakepower, mass, wheel_friction]
 var stats : Dictionary[String,Array] = {
-	"butter" : [0.9,300,1,400,0.5],
-	"word" : [2.0,500,5,100,3.0],
+	"butter" : [0.5,300,1,150,0.1],
+	"word" : [2.0,500,2,100,3.0],
 	"car" : [2.1,700,8,200,6.0],
 	"hotdog" : [2.2,900,11,250,5.0],
 }

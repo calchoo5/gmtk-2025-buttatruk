@@ -50,7 +50,7 @@ var carddesc = {
 
 func _ready() -> void:
 	Transition.playback("white_fade")
-	_card()
+	#_card()
 
 func _process(delta : float) -> void:
 	if start:
