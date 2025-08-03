@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		self.show()
 		get_tree().paused = true
 	elif get_tree().current_scene.name == "titel":
-		print("yuh")
 		$settings/quit.hide()
 		$settings/resume.hide()
 
