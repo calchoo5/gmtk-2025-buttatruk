@@ -1,12 +1,12 @@
 extends Camera3D
 
 @export var look_target: Node3D
-@export var distance = 4.0
-@export var height = 2.0
+@export var distance = 5.0
+@export var height = 2.5
 
 
 func _ready() -> void:
-	global_position = look_target.global_position + Vector3(0,2,-3)
+	global_position = look_target.global_position + Vector3(-3,4,0)
 	
 func _physics_process(delta):
 	var target = look_target.get_global_transform_interpolated().origin
