@@ -16,6 +16,21 @@ var shift2 = true
 
 var pointsMult : int = 1
 
+var models: Dictionary[String,PackedScene] = {
+	"butter" : load("res://car models/butter_model.tscn"),
+	"word" : load("res://car models/word_model.tscn")
+}
+var curr_model = "null"
+
+func _ready() -> void:
+	change_model("word")
+
+func change_model(model : String) -> void:
+	if(model != curr_model):
+		for child in $Model.get_children():
+			child.queue_free()
+		$Model.add_child(models[model].instantiate())
+
 func flip_directions() -> void:
 	maxsteer *= -1
 	print("flipped")
