@@ -4,7 +4,7 @@ extends VehicleBody3D
 @export var max_enginepower = 300
 @export var brakepower = 2
 @export var handbrakepower = 3
-@export var steerdamp = 2
+@export var steerdamp = 4
 
 var additional_enginepower : int = 0
 var enginepower = max_enginepower
@@ -14,6 +14,7 @@ var buffer = 0
 var amount = 250
 var shift1 = true
 var shift2 = true
+var shift3 = true
 
 var pointsMult : int = 1
 
@@ -66,9 +67,9 @@ var sounds : Dictionary[String,AudioStream] = {
 #[max_steer, max_engine, brakepower, mass, wheel_friction]
 var stats : Dictionary[String,Array] = {
 	"butter" : [0.5,300,1,150,0.1],
-	"word" : [2.0,500,2,100,3.0],
-	"car" : [2.1,700,8,200,6.0],
-	"hotdog" : [2.2,900,11,250,5.0],
+	"word" : [0.7,500,2,70,2.0],
+	"car" : [0.8,700,8,200,6.0],
+	"hotdog" : [1.2,900,11,250,5.0],
 }
 
 var curr_model = "null"
@@ -225,6 +226,7 @@ func fart():
 		shift1 = true
 		shift2 = true
 	elif 200 > rpm && rpm > 150:
+		steerdamp = 3
 		if shift1:
 			print("shift1")
 			enginepower = -10
@@ -234,6 +236,7 @@ func fart():
 			shift2 = true
 		amount = 350
 	elif 400 > rpm && rpm > 230:
+		steerdamp = 2
 		if shift2:
 			print("shift2")
 			enginepower = -10
@@ -242,6 +245,16 @@ func fart():
 			shift2 = false
 			shift1 = true
 		amount = 450
+	elif 600 > rpm && rpm > 420:
+		steerdamp = 1
+		if shift3:
+			print("shift3")
+			enginepower = -10
+			await get_tree().create_timer(0.2).timeout
+			enginepower = max_enginepower + additional_enginepower
+			shift3 = false
+			shift2 = true
+		amount = 600
 	var pitch = (abs($frontleft.get_rpm()) + 100)/amount
 	$fartcan.pitch_scale = pitch
 	$fartcan.play()

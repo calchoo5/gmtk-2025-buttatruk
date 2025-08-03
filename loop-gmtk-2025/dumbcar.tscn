@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c34pawyjx8m80" path="res://dumbcar.gd" id="1_xlo5i"]
 [ext_resource type="PackedScene" uid="uid://bdr8bxxd5ubr7" path="res://followcam.tscn" id="2_riqrm"]
 [ext_resource type="AudioStream" uid="uid://f5kvx44j6g6u" path="res://shit/sfx/Butter dog (Original Version) [HAzp5Q6P5ek].mp3" id="3_riqrm"]
-[ext_resource type="PackedScene" uid="uid://ogv1yxkcgkbp" path="res://car models/car_model.tscn" id="4_2r58r"]
+[ext_resource type="PackedScene" path="res://car models/car_model.tscn" id="4_2r58r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqrm"]
 albedo_color = Color(0.0807833, 0.0807833, 0.0807833, 1)

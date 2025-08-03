@@ -100,7 +100,6 @@ grow_horizontal = 0
 
 [node name="shopgui" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="shopgui"]
 anchors_preset = 15
@@ -134,24 +133,24 @@ theme_override_font_sizes/font_size = 20
 text = "Butter Car - 0 Points
 
 Your starter car. Slow, slippery,
-and salty. And heavy."
+and salty."
 icon = ExtResource("4_yvb2a")
 
 [node name="car2" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "5 dollar footlong - 5 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+Its 5 dollars. Its a footlong. 
+Good luck getting anywhere."
 icon = ExtResource("4_yvb2a")
 
 [node name="car3" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = " - 50 Points
+text = "The Word \"Car\" - 50 Points
 
 Doesn't get more literal than this.
 Fast, light, and slippery."
@@ -161,60 +160,59 @@ icon = ExtResource("4_yvb2a")
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = " Regular Car - 150 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+Run of the mill. Regular as
+can be,"
 icon = ExtResource("4_yvb2a")
 
 [node name="car5" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Weiner - 200 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+You wanna see my weiner?"
 icon = ExtResource("4_yvb2a")
 
 [node name="car6" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Blåhaj - 333 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+The skrinkly!!! :3
+Grunkly!!!!! :33333
+"
 icon = ExtResource("4_yvb2a")
 
 [node name="car7" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Forklift - 525 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+I sure hope you're certified."
 icon = ExtResource("4_yvb2a")
 
 [node name="car8" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Broken Car - 666 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+Probably haunted by the
+person that died in it."
 icon = ExtResource("4_yvb2a")
 
 [node name="car9" type="Button" parent="shopgui/gridcont"]
 layout_mode = 2
 theme = ExtResource("3_dv6av")
 theme_override_font_sizes/font_size = 20
-text = "Word Car - 50 Points
+text = "Antique Car - 1000 Points
 
-Doesn't get more literal than this.
-Fast, light, and slippery."
+From the ancient times.
+No one knows how to drive it."
 icon = ExtResource("4_yvb2a")
 
 [node name="leave" type="Button" parent="shopgui"]
@@ -1003,6 +1001,7 @@ shape = SubResource("HeightMapShape3D_haunf")
 
 [node name="dumbcar" parent="." instance=ExtResource("1_fv0fp")]
 transform = Transform3D(-0.0903024, 0, 0.995914, 0, 1, 0, -0.995914, 0, -0.0903024, -7.98253, 0.600794, 45.0165)
+center_of_mass = Vector3(0, 0.2, 0)
 
 [node name="DrunkInterval" type="Timer" parent="."]
 
@@ -1018,6 +1017,13 @@ shape = SubResource("BoxShape3D_xjdu2")
 
 [connection signal="pressed" from="shopgui/gridcont/car1" to="." method="_on_car_1_pressed"]
 [connection signal="pressed" from="shopgui/gridcont/car2" to="." method="_on_car_2_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car3" to="." method="_on_car_3_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car4" to="." method="_on_car_4_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car5" to="." method="_on_car_5_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car6" to="." method="_on_car_6_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car7" to="." method="_on_car_7_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car8" to="." method="_on_car_8_pressed"]
+[connection signal="pressed" from="shopgui/gridcont/car9" to="." method="_on_car_9_pressed"]
 [connection signal="pressed" from="shopgui/leave" to="." method="_on_leave_pressed"]
 [connection signal="pressed" from="rogue/cards/card1" to="." method="_on_card_1_pressed"]
 [connection signal="mouse_entered" from="rogue/cards/card1/vb" to="." method="_on_vb_mouse_entered"]

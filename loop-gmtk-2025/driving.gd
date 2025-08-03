@@ -222,7 +222,47 @@ func _on_car_1_pressed() -> void:
 	$dumbcar.change_model("butter")
 	
 func _on_car_2_pressed() -> void:
-	if points == 0:
+	if points >= 5:
+		points -= 5
+		$dumbcar.change_model("footlong")
+
+func _on_car_3_pressed() -> void:
+	if points >= 50:
 		points -= 50
 		$dumbcar.change_model("word")
-		
+
+
+func _on_car_4_pressed() -> void:
+	if points >= 150:
+		points -= 150
+		$dumbcar.change_model("car")
+
+
+func _on_car_5_pressed() -> void:
+	if points >= 200:
+		points -= 200
+		$dumbcar.change_model("hotdog")
+
+
+func _on_car_6_pressed() -> void:
+	if points >= 333:
+		points -= 333
+		$dumbcar.change_model("blahaj")
+
+
+func _on_car_7_pressed() -> void:
+	if points >= 525:
+		points -= 525
+		$dumbcar.change_model("fork")
+
+
+func _on_car_8_pressed() -> void:
+	if points >= 666:
+		points -= 666
+		$dumbcar.change_model("broken")
+
+
+func _on_car_9_pressed() -> void:
+	if points >= 1000:
+		points -= 1000
+		$dumbcar.change_model("ancient")
